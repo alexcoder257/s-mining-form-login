@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S-mining</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <!-- FORM LOGIN -->
+        <div class="card" id="loginForm">
+          <h1 class="card-title">Welcome back</h1>
+          <p class="card-description">Please login account with your info</p>
+          <input type="email" id="loginEmail" placeholder="Enter your email" />
+          <div class="input-group">
+            <input type="password" id="loginPassword" placeholder="Password" />
+            <img
+              src="assets/icons/eye.svg"
+              alt="Show Password"
+              class="password-toggle"
+              id="togglePassword"
+              onclick="togglePassword()"
+            />
+          </div>
+          <div
+            class="text-right forgot-password"
+            onclick="showForm('forgotPassword')"
+          >
+            <a href="#">Forgot password?</a>
+          </div>
+          <button class="button-style" onclick="handleLogin()">Log in</button>
+          <p class="footer">
+            Not yet member?
+            <a class="register-link" href="#" onclick="showForm('register')"
+              >Create an account</a
+            >
+          </p>
+        </div>
+
+        <!-- FORM REGISTER -->
+        <div class="card hidden" id="registerForm">
+          <h1 class="card-title">Create new account</h1>
+          <p class="card-description">
+            Welcome! Let's fill information and create account
+          </p>
+          <input type="text" id="registerName" placeholder="Name" />
+          <input type="email" id="registerEmail" placeholder="Email" />
+          <div class="input-group">
+            <input
+              type="password"
+              id="registerPassword"
+              placeholder="Password"
+            />
+            <img
+              src="assets/icons/eye.svg"
+              alt="Show Password"
+              class="password-toggle"
+              id="toggleRegisterPassword"
+              onclick="toggleRegisterPassword()"
+            />
+          </div>
+          <input
+            class="input-referal-register"
+            type="text"
+            id="registerReferral"
+            placeholder="Referral code"
+          />
+          <div class="checkbox-group">
+            <input type="checkbox" id="termsCheckbox" />
+            <label for="termsCheckbox">
+              I've read and agree with <a href="#">Terms of Service</a> and
+              <a href="#">Privacy Policy</a>
+            </label>
+          </div>
+          <button class="button-style" onclick="handleRegister()">
+            Sign up
+          </button>
+          <p class="footer">
+            Already have an account?
+            <a href="#" onclick="showForm('login')">Sign in</a>
+          </p>
+        </div>
+
+        <!-- FORM FORGOT PASSWORD -->
+        <div class="card hidden" id="forgotPasswordForm">
+          <img
+            class="icon-back"
+            src="assets/icons/arrow-back.svg"
+            onclick="showForm('login')"
+          />
+          <h1 class="card-title">Forgot password</h1>
+          <p class="card-description">
+            Enter your email address, we will send you a link to setup a
+            password
+          </p>
+          <input type="email" id="forgotEmail" placeholder="Enter your email" />
+          <button
+            class="forgot-pw-btn button-style"
+            onclick="handleForgotPassword()"
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
